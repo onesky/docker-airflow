@@ -22,6 +22,7 @@ ENV GIT_SSL_NO_VERIFY true
 
 RUN apt-get update -y
 RUN apt-get install -y --no-install-recommends \
+    apt-utils \
     netcat \
     python-pip \
     python-dev \
@@ -45,7 +46,7 @@ RUN apt-get install -y --no-install-recommends \
  RUN pip install --upgrade setuptools && pip install --upgrade pip
  RUN git clone git://github.com/airbnb/airflow.git && cd airflow \
     && git reset --hard $AIRFLOW_COMMIT \
-    && pip install .[postgres] && pip install flask_admin==1.2.0
+    && pip install .[postgres] && pip install flask_admin==1.2.0 && pip install celery
  RUN pip install awscli
 
 ADD config/airflow.cfg $AIRFLOW_HOME/airflow.cfg
