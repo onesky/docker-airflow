@@ -14,7 +14,7 @@ ENV TERM linux
 ENV INITRD No
 
 ENV AIRFLOW_VERSION 1.6.2
-ENV AIRFLOW_COMMIT 93a28450f6133c9e008677240aa19fea0f1603f5
+ENV AIRFLOW_COMMIT 3813d511396f53273edb9c4381c6e7f706ee352a
 ENV AIRFLOW_HOME /usr/local/airflow
 ENV C_FORCE_ROOT true
 ENV PYTHONLIBPATH /usr/lib/python2.7/dist-packages
@@ -44,7 +44,7 @@ RUN apt-get install -y --no-install-recommends \
     /usr/share/doc \
     /usr/share/doc-base
  RUN pip install --upgrade setuptools && pip install --upgrade pip
- RUN git clone git://github.com/onesky/airflow.git && cd airflow \
+ RUN git clone git://github.com/airbnb/airflow.git && cd airflow \
     && git reset --hard $AIRFLOW_COMMIT \
     && pip install .[postgres] && pip install .[s3] && pip install flask_admin==1.2.0 && pip install celery
  RUN pip install awscli
