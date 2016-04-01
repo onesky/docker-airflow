@@ -13,8 +13,8 @@ ENV TERM linux
 # Work around initramfs-tools running on kernel 'upgrade': <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=594189>
 ENV INITRD No
 
-ENV AIRFLOW_VERSION 1.7.0
-ENV AIRFLOW_COMMIT f71ea7023143185830a7cdc36c3b2010441aaa25
+ENV AIRFLOW_VERSION 1.6.2
+ENV AIRFLOW_COMMIT 93a28450f6133c9e008677240aa19fea0f1603f5
 ENV AIRFLOW_HOME /usr/local/airflow
 ENV C_FORCE_ROOT true
 ENV PYTHONLIBPATH /usr/lib/python2.7/dist-packages
@@ -58,3 +58,4 @@ EXPOSE 5555
 EXPOSE 8793
 
 CMD ["airflow"]
+
