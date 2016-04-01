@@ -44,7 +44,7 @@ RUN apt-get install -y --no-install-recommends \
     /usr/share/doc \
     /usr/share/doc-base
  RUN pip install --upgrade setuptools && pip install --upgrade pip
- RUN git clone git://github.com/airbnb/airflow.git && cd airflow \
+ RUN git clone git://github.com/onesky/airflow.git && cd airflow \
     && git reset --hard $AIRFLOW_COMMIT \
     && pip install .[postgres] && pip install .[s3] && pip install flask_admin==1.2.0 && pip install celery
  RUN pip install awscli
